@@ -324,6 +324,5 @@ Both programs are independent and use beginner-friendly Python logic. Review the
 
 **Python Functions & Lists Assessment**
 
-*Built with Python, clear logic, and practice.*
 
 </div>

@@ -1,3 +1,4 @@
+
 def get_positive_student_count():
     # Ask for a whole-number student count greater than zero.
     while True:
@@ -27,14 +28,18 @@ def get_valid_mark(student_name):
 
 
 def get_valid_name():
-    # Return a student's name without leading or trailing spaces.
+    # Ask for a non-empty name that does not contain only numbers.
     while True:
         name = input("Enter student name: ").strip()
 
-        if name:
-            return name.title()
+        if not name:
+            print("Error: Name cannot be empty. Please try again.")
 
-        print("Name cannot be empty. Please try again.")
+        elif name.isdigit():
+            print("Error: Numeric values are not allowed as names. Please enter a valid name.")
+
+        else:
+            return name
 
 
 def display_students_above_average(student_names, student_marks, average):
@@ -108,7 +113,7 @@ def main():
     print(f"Highest Marks      : {highest_mark}")
     print(f"Lowest Marks       : {lowest_mark}")
     print(f"Passing Students  : {passing_count}")
-    print(f"Failing Students  : {failing_count}")
+    print(f"Failing Students   : {failing_count}")
 
     # Show every student tied for the highest mark.
     print("\nHIGHEST-SCORING STUDENT(S)")
@@ -125,6 +130,7 @@ def main():
     display_students_above_average(
         student_names, student_marks, class_average
     )
+
     display_sorted_results(student_names, student_marks)
 
     print("\n" + "=" * 45)

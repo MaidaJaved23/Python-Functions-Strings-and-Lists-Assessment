@@ -1,3 +1,5 @@
+# Store the five subject names in a list.
+SUBJECTS = ["English", "Mathematics", "Science", "Computer", "Urdu"]
 def get_valid_marks(subject):
     # Ask for a subject's marks until the user enters a whole number from 0 to 100.
     while True:

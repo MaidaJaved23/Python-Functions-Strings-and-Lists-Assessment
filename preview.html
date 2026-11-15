@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Python Functions &amp; Lists Assessment: Preview</title>
+<style>
+:root{--bg:#06141f;--panel:#0b2433;--cy:#22d3ee;--gr:#34d399;--tx:#e6f6ff;--mu:#8fb3c7;color-scheme:dark}
+@media (prefers-color-scheme:light){:root{--bg:#eef7fb;--panel:#fff;--tx:#0a2433;--mu:#48667a;color-scheme:light}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:17px/1.6 "Segoe UI",Helvetica,Arial,sans-serif}
+img{max-width:100%;height:auto;display:block}
+nav{position:sticky;top:0;z-index:5;display:flex;gap:6px;flex-wrap:wrap;justify-content:center;padding:10px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid #22d3ee33}
+nav a{color:var(--cy);text-decoration:none;padding:6px 12px;border-radius:8px;font-weight:600}nav a:hover,nav a:focus-visible{background:#22d3ee22;outline:2px solid var(--cy)}
+main{max-width:1100px;margin:0 auto;padding:32px 20px 60px}
+section{margin:0 0 56px}h2{font-size:28px;margin:0 0 8px}p.lead{color:var(--mu);max-width:70ch;margin:0 0 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.card{background:var(--panel);border:1px solid #22d3ee44;border-radius:14px;padding:20px}
+pre{margin:0;overflow-x:auto;background:#04101a;color:#bff6e0;padding:16px;border-radius:10px;font:14px/1.5 Consolas,Menlo,monospace}
+.card h3{margin:0 0 10px}
+footer img{margin-top:0}
+</style></head><body>
+<header><img src="assets/header.svg" alt="Python Functions and Lists Assessment"></header>
+<nav><a href="#flow">Program flow</a><a href="#er">ER diagram</a><a href="#task1">Task 1</a><a href="#task2">Task 2</a><a href="#run">Run it</a></nav>
+<main>
+<section id="flow"><h2>Program flow</h2><p class="lead">Both programs are independent. Each one validates input first, then calculates, then prints a clear report.</p><img src="assets/program-flow.svg" alt="Program flow for both tasks"></section>
+<section id="er"><h2>ER diagram</h2><p class="lead">How the data in each task relates. This is a conceptual model; the programs use Python variables and lists.</p><img src="assets/er-diagram.svg" alt="ER diagram"></section>
+<section id="task1"><h2>Task 1: Student Result Card Generator</h2><p class="lead">Collects a name, roll number and five marks, then prints total, percentage, grade and Pass/Fail status.</p>
+<div class="grid"><img src="assets/grading-scale.svg" alt="Grading scale chart"><img src="assets/task1-marks-chart.svg" alt="Task 1 sample marks chart"></div>
+<div class="card" style="margin-top:20px"><h3>Sample output</h3><pre>========================================
+             STUDENT RESULT CARD
+========================================
+Student Name : Ali Khan
+Roll Number  : 1025
+----------------------------------------
+Total Marks  : 450 / 500
+Percentage   : 90.00%
+Letter Grade : A+
+Final Status : Pass
+========================================</pre></div></section>
+<section id="task2"><h2>Task 2: Class Marks Analyzer</h2><p class="lead">Collects names and marks into two lists, then reports average, extremes, pass/fail counts, above-average students and sorted marks.</p>
+<div class="grid"><img src="assets/task2-marks-chart.svg" alt="Task 2 sample marks chart"><div class="card"><h3>Sample output</h3><pre>Total Students : 4
+Class Average  : 72.50
+Highest Marks  : 95  (Sara)
+Lowest Marks   : 45  (Ahmed)
+Passing Students : 3
+Failing Students : 1
+Above average:
+Sara: 95
+Sorted: 95, 80, 70, 45</pre></div></div></section>
+<section id="run"><h2>Run it</h2><div class="card"><pre>python result_card_generator.py
+python class_marks_analyzer.py</pre></div></section>
+</main>
+<footer><img src="assets/footer.svg" alt="Footer"></footer>
+<p style="text-align:center;color:var(--mu)">Author: Maida Javed</p>
+</body></html>

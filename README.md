@@ -8,7 +8,9 @@
 
 **Two beginner-friendly Python programs for student results and class performance analysis.**
 
-### [Open the live preview](https://htmlpreview.github.io/?https://github.com/YOUR-USERNAME/python-functions-lists-assessment/blob/main/preview.html) | [preview.html](preview.html)
+### <p align="center">
+  <a href="https://maidajaved23.github.io/python-functions-lists-assessment/preview.html"><b>▶ Open the live preview</b></a>
+</p>
 
 </div>
 

@@ -1,4 +1,16 @@
-[README.md](https://github.com/user-attachments/files/34523796/README.md)
+
+<div align="center">
+
+<img src="assets/header.svg" alt="Animated header" width="100%">
+
+</div>
+
+<div align="center">
+
+**[▶ Open Live Preview (preview.html)](preview.html)**
+
+</div>
+
 <div align="center">
 
 # Python Functions & Lists Assessment
@@ -26,6 +38,13 @@ The programs use simple Python logic to collect student information, validate in
 | `result_card_generator.py` | Creates a result card for one student. |
 | `class_marks_analyzer.py` | Analyzes marks for all students in a class. |
 | `README.md` | Explains the project, concepts, instructions, and sample results. |
+
+### Entity Relationship Diagram
+<div align="center">
+
+<img src="assets/er-diagram.svg" alt="ER diagram" width="90%">
+
+</div>
 
 ## 2. Task 1: Student Result Card Generator
 
@@ -98,6 +117,20 @@ Letter Grade : A+
 Final Status : Pass
 ========================================
 ```
+
+### Charts
+<div align="center">
+
+<img src="assets/task1-marks-chart.svg" alt="Task 1 marks chart" width="80%">
+
+</div>
+
+
+<div align="center">
+
+<img src="assets/grade-scale-chart.svg" alt="Grade scale chart" width="80%">
+
+</div>
 
 ## 3. Task 2: Class Marks Analyzer
 
@@ -187,6 +220,13 @@ Marks from highest to lowest:
 95, 80, 70, 45
 ========================================
 ```
+
+### Chart
+<div align="center">
+
+<img src="assets/task2-class-chart.svg" alt="Task 2 class chart" width="80%">
+
+</div>
 
 ## 4. How to Run the Programs
 
@@ -324,5 +364,13 @@ Both programs are independent and use beginner-friendly Python logic. Review the
 
 **Python Functions & Lists Assessment**
 
+*Built with Python, clear logic, and practice.*
 
 </div>
+
+<div align="center">
+
+<img src="assets/footer.svg" alt="Animated footer" width="100%">
+
+</div>
+

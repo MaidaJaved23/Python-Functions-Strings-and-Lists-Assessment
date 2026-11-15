@@ -1,0 +1,459 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Python Functions &amp; Lists Assessment – Preview</title><style>
+:root{--bg:#fff;--fg:#0f172a;--c:#f1f5f9;--b:#cbd5e1;--a:#2563eb}@media(prefers-color-scheme:dark){:root{--bg:#0b1220;--fg:#e2e8f0;--c:#1e293b;--b:#334155;--a:#60a5fa}}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.7 "Segoe UI",system-ui,sans-serif}main{max-width:960px;margin:auto;padding:24px}
+img{max-width:100%;height:auto}.c{text-align:center}table{border-collapse:collapse;width:100%;display:block;overflow-x:auto}th,td{border:1px solid var(--b);padding:8px 12px}th{background:var(--c)}
+pre{background:var(--c);padding:14px;border-radius:10px;overflow-x:auto}code{font-family:Consolas,monospace}a{color:var(--a)}h2{border-bottom:2px solid var(--b);padding-bottom:6px}hr{border:0;border-top:1px solid var(--b)}</style></head><body><main><div class="c">
+
+<img src="assets/header.svg" alt="Animated header" width="100%">
+
+</div>
+
+<div class="c">
+
+**[▶ Open Live Preview (preview.html)](preview.html)**
+
+</div>
+
+<div class="c">
+
+# Python Functions & Lists Assessment
+
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Assessment](https://img.shields.io/badge/Assessment-Functions%20%26%20Lists-2563eb?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-16803c?style=for-the-badge)
+
+**Two beginner-friendly Python programs for student results and class performance analysis.**
+
+</div>
+
+<hr />
+<h2>1. Project Overview</h2>
+<p>This repository contains two separate Python programs created for the <strong>Functions, Strings and Lists Assessment</strong>.</p>
+<p>The programs use simple Python logic to collect student information, validate input, perform calculations, and display clear results.</p>
+<h3>Repository files</h3>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result_card_generator.py</code></td>
+<td>Creates a result card for one student.</td>
+</tr>
+<tr>
+<td><code>class_marks_analyzer.py</code></td>
+<td>Analyzes marks for all students in a class.</td>
+</tr>
+<tr>
+<td><code>README.md</code></td>
+<td>Explains the project, concepts, instructions, and sample results.</td>
+</tr>
+</tbody>
+</table>
+<h3>Entity Relationship Diagram</h3>
+<div class="c">
+
+<img src="assets/er-diagram.svg" alt="ER diagram" width="90%">
+
+</div>
+
+<h2>2. Task 1: Student Result Card Generator</h2>
+<h3>Description</h3>
+<p>The first program asks for one student's name, roll number, and marks in five subjects. It calculates the total marks, percentage, and letter grade, then displays a formatted result card.</p>
+<h3>Requirements covered</h3>
+<ul>
+<li>Collects the student's name and roll number.</li>
+<li>Collects marks in five subjects: English, Mathematics, Computer Science, Physics, and Chemistry.</li>
+<li>Uses <code>get_valid_marks(subject)</code> to accept marks only from 0 to 100.</li>
+<li>Uses <code>calculate_percentage(total, max_total)</code> to calculate the percentage.</li>
+<li>Uses <code>get_grade(percentage)</code> to assign the letter grade.</li>
+<li>Uses <code>format_name(name)</code> with <code>.strip()</code> and <code>.title()</code> to clean the student's name.</li>
+<li>Checks the roll number with <code>.isdigit()</code> so it contains digits only.</li>
+<li>Uses the required grading scale:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Percentage</th>
+<th>Grade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>90 and above</td>
+<td>A+</td>
+</tr>
+<tr>
+<td>80 to below 90</td>
+<td>A</td>
+</tr>
+<tr>
+<td>70 to below 80</td>
+<td>B</td>
+</tr>
+<tr>
+<td>60 to below 70</td>
+<td>C</td>
+</tr>
+<tr>
+<td>50 to below 60</td>
+<td>D</td>
+</tr>
+<tr>
+<td>Below 50</td>
+<td>Fail</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Special passing rule:</strong> If even one subject has marks below 40, the final status is <code>Fail</code>, even if the overall percentage is high. The letter grade is calculated from the overall percentage, while the final Pass/Fail status also checks this special rule.</p>
+<h3>Python concepts used</h3>
+<ul>
+<li>Functions: <code>def</code>, parameters, and <code>return</code></li>
+<li>Conditional statements: <code>if</code>, <code>elif</code>, and <code>else</code></li>
+<li>String methods: <code>.strip()</code>, <code>.title()</code>, and <code>.isdigit()</code></li>
+<li>Lists and loops</li>
+<li><code>sum()</code> and <code>any()</code></li>
+<li>Exception handling with <code>try</code> and <code>except</code></li>
+<li>Formatted output using f-strings</li>
+</ul>
+<h3>Sample input</h3>
+<pre><code class="language-text">Enter student name:  ali khan
+Enter roll number:  1025
+Enter marks in English (0-100): 95
+Enter marks in Mathematics (0-100): 88
+Enter marks in Computer Science (0-100): 91
+Enter marks in Physics (0-100): 84
+Enter marks in Chemistry (0-100): 92
+</code></pre>
+<h3>Sample output</h3>
+<pre><code class="language-text">========================================
+             STUDENT RESULT CARD
+========================================
+Student Name : Ali Khan
+Roll Number  : 1025
+----------------------------------------
+English             : 95
+Mathematics         : 88
+Computer Science    : 91
+Physics             : 84
+Chemistry           : 92
+----------------------------------------
+Total Marks  : 450 / 500
+Percentage   : 90.00%
+Letter Grade : A+
+Final Status : Pass
+========================================
+</code></pre>
+<h3>Charts</h3>
+<div class="c">
+
+<img src="assets/task1-marks-chart.svg" alt="Task 1 marks chart" width="80%">
+
+</div>
+
+<div class="c">
+
+<img src="assets/grade-scale-chart.svg" alt="Grade scale chart" width="80%">
+
+</div>
+
+<h2>3. Task 2: Class Marks Analyzer</h2>
+<h3>Description</h3>
+<p>The second program collects the names and marks of all students in a class. It analyzes their performance and displays the class average, highest and lowest marks, passing and failing counts, students above average, and marks in descending order.</p>
+<h3>Requirements covered</h3>
+<ul>
+<li>Asks how many students are in the class.</li>
+<li>Creates two separate lists:</li>
+<li><code>student_names = []</code></li>
+<li><code>student_marks = []</code></li>
+<li>Uses <code>.append()</code> to store each student's name and marks.</li>
+<li>Validates every mark and accepts only values from 0 to 100.</li>
+<li>Asks again when a mark or other numeric input is invalid.</li>
+<li>Calculates the class average.</li>
+<li>Finds the highest and lowest marks.</li>
+<li>Displays all students tied for the highest or lowest marks.</li>
+<li>Counts passing students (50 or above) and failing students (below 50).</li>
+<li>Displays all students whose marks are above the class average.</li>
+<li>Displays marks sorted from highest to lowest.</li>
+<li>Uses custom functions for input validation, average calculation, and above-average student display.</li>
+</ul>
+<h3>Python concepts and functions used</h3>
+<table>
+<thead>
+<tr>
+<th>Concept / Function</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lists <code>[]</code></td>
+<td>Store student names and marks separately.</td>
+</tr>
+<tr>
+<td><code>.append()</code></td>
+<td>Add each student's information to a list.</td>
+</tr>
+<tr>
+<td><code>len()</code></td>
+<td>Count the students in the class.</td>
+</tr>
+<tr>
+<td><code>sum()</code></td>
+<td>Add all marks to calculate the average.</td>
+</tr>
+<tr>
+<td><code>max()</code></td>
+<td>Find the highest marks.</td>
+</tr>
+<tr>
+<td><code>min()</code></td>
+<td>Find the lowest marks.</td>
+</tr>
+<tr>
+<td><code>sorted()</code></td>
+<td>Arrange marks from highest to lowest.</td>
+</tr>
+<tr>
+<td><code>for</code> loop</td>
+<td>Collect and analyze student information.</td>
+</tr>
+<tr>
+<td><code>if</code> and <code>else</code></td>
+<td>Count passing and failing students.</td>
+</tr>
+<tr>
+<td>Custom functions</td>
+<td>Keep repeated tasks simple and organized.</td>
+</tr>
+<tr>
+<td><code>try</code> and <code>except</code></td>
+<td>Handle invalid numeric input.</td>
+</tr>
+</tbody>
+</table>
+<h3>Sample input</h3>
+<pre><code class="language-text">How many students are in the class? 4
+
+Student 1
+Enter student name: Ali
+Enter marks for Ali (0-100): 80
+
+Student 2
+Enter student name: Sara
+Enter marks for Sara (0-100): 95
+
+Student 3
+Enter student name: Ahmed
+Enter marks for Ahmed (0-100): 45
+
+Student 4
+Enter student name: Ayesha
+Enter marks for Ayesha (0-100): 70
+</code></pre>
+<h3>Sample output</h3>
+<pre><code class="language-text">========================================
+             CLASS ANALYSIS
+========================================
+Total Students : 4
+Class Average  : 72.50
+
+Highest Marks  : 95
+Student(s) with highest marks:
+- Sara
+
+Lowest Marks   : 45
+Student(s) with lowest marks:
+- Ahmed
+
+Passing Students : 3
+Failing Students : 1
+
+Students scoring above the class average:
+Sara: 95
+
+Marks from highest to lowest:
+95, 80, 70, 45
+========================================
+</code></pre>
+<h3>Chart</h3>
+<div class="c">
+
+<img src="assets/task2-class-chart.svg" alt="Task 2 class chart" width="80%">
+
+</div>
+
+<h2>4. How to Run the Programs</h2>
+<h3>Requirements</h3>
+<ul>
+<li>Python 3 installed on your computer.</li>
+<li>Any Python editor, such as VS Code, PyCharm, or IDLE.</li>
+<li>No external Python libraries are required.</li>
+</ul>
+<h3>Step 1: Download or clone the repository</h3>
+<pre><code class="language-bash">git clone https://github.com/YOUR-USERNAME/python-functions-lists-assessment.git
+</code></pre>
+<p>Replace <code>YOUR-USERNAME</code> with your GitHub username.</p>
+<h3>Step 2: Open the project folder</h3>
+<pre><code class="language-bash">cd python-functions-lists-assessment
+</code></pre>
+<h3>Step 3: Run Task 1</h3>
+<pre><code class="language-bash">python result_card_generator.py
+</code></pre>
+<h3>Step 4: Run Task 2</h3>
+<pre><code class="language-bash">python class_marks_analyzer.py
+</code></pre>
+<p>Run each file separately because both programs are independent.</p>
+<h2>5. Input Validation and Testing</h2>
+<p>Both programs were designed to handle invalid input instead of stopping unexpectedly.</p>
+<h3>Task 1 test scenarios</h3>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Expected behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Marks are between 0 and 100</td>
+<td>Accept the marks.</td>
+</tr>
+<tr>
+<td>Marks are below 0 or above 100</td>
+<td>Show an error and ask again.</td>
+</tr>
+<tr>
+<td>Letters are entered instead of marks</td>
+<td>Show an error and ask again.</td>
+</tr>
+<tr>
+<td>Roll number contains letters or symbols</td>
+<td>Reject it and ask again.</td>
+</tr>
+<tr>
+<td>Name has extra spaces</td>
+<td>Clean it using <code>.strip()</code> and <code>.title()</code>.</td>
+</tr>
+<tr>
+<td>All marks are 40 or above and percentage is at least 50</td>
+<td>Final status is Pass.</td>
+</tr>
+<tr>
+<td>Any one subject has marks below 40</td>
+<td>Final status is Fail.</td>
+</tr>
+<tr>
+<td>Overall percentage is below 50</td>
+<td>Letter grade is Fail.</td>
+</tr>
+</tbody>
+</table>
+<h3>Task 2 test scenarios</h3>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Expected behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Student count is zero or negative</td>
+<td>Ask for a positive number again.</td>
+</tr>
+<tr>
+<td>Student count is not a whole number</td>
+<td>Show an error and ask again.</td>
+</tr>
+<tr>
+<td>Marks are between 0 and 100</td>
+<td>Accept the marks.</td>
+</tr>
+<tr>
+<td>Marks are below 0 or above 100</td>
+<td>Show an error and ask again.</td>
+</tr>
+<tr>
+<td>Letters are entered instead of marks</td>
+<td>Show an error and ask again.</td>
+</tr>
+<tr>
+<td>A student scores exactly 50</td>
+<td>Count the student as passing.</td>
+</tr>
+<tr>
+<td>Two or more students have the same highest or lowest marks</td>
+<td>Display all students with those marks.</td>
+</tr>
+<tr>
+<td>A student scores above the class average</td>
+<td>Include that student in the above-average list.</td>
+</tr>
+</tbody>
+</table>
+<h2>6. General Programming Practices</h2>
+<ul>
+<li>Both tasks are saved in separate Python files.</li>
+<li>Every function has a clear name and a one-line comment describing its purpose.</li>
+<li>Meaningful variable and function names are used.</li>
+<li>Input validation is included.</li>
+<li>Important programming steps have comments.</li>
+<li>Proper indentation and readable formatting are maintained.</li>
+<li>The programs use basic Python concepts and straightforward logic.</li>
+</ul>
+<h2>7. GitHub Repository Structure</h2>
+<p>The repository should be named:</p>
+<p><code>python-functions-lists-assessment</code></p>
+<p>It should contain exactly these required project files:</p>
+<pre><code class="language-text">python-functions-lists-assessment/
+│
+├── result_card_generator.py
+├── class_marks_analyzer.py
+└── README.md
+</code></pre>
+<h2>8. LMS Submission Checklist</h2>
+<p>Before submitting the assignment, make sure you have:</p>
+<ul>
+<li>[ ] Created the GitHub repository with the required name.</li>
+<li>[ ] Uploaded <code>result_card_generator.py</code>.</li>
+<li>[ ] Uploaded <code>class_marks_analyzer.py</code>.</li>
+<li>[ ] Uploaded <code>README.md</code>.</li>
+<li>[ ] Tested both programs with different input scenarios.</li>
+<li>[ ] Pushed the latest code to GitHub.</li>
+<li>[ ] Checked that the repository is accessible.</li>
+<li>[ ] Copied the GitHub repository URL for LMS submission.</li>
+</ul>
+<h3>Git commands</h3>
+<p>Use these commands from inside the project folder:</p>
+<pre><code class="language-bash">git init
+git add .
+git commit -m &quot;Complete Functions and Lists Assessment&quot;
+git branch -M main
+git remote add origin https://github.com/YOUR-USERNAME/python-functions-lists-assessment.git
+git push -u origin main
+</code></pre>
+<p>If the remote repository is already connected, do not add it again. For later updates, use:</p>
+<pre><code class="language-bash">git add .
+git commit -m &quot;Update assessment files&quot;
+git push
+</code></pre>
+<h2>9. Final Note</h2>
+<p>Both programs are independent and use beginner-friendly Python logic. Review the functions, conditions, loops, and calculations before your evaluation so you can explain how each program works and demonstrate it confidently.</p>
+<hr />
+<div class="c">
+
+**Python Functions & Lists Assessment**
+
+*Built with Python, clear logic, and practice.*
+
+</div>
+
+<div class="c">
+
+<img src="assets/footer.svg" alt="Animated footer" width="100%">
+
+</div></main></body></html>

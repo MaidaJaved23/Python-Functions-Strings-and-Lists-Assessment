@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 560" width="1600" height="560" role="img" aria-labelledby="t d">
+  <title id="t">Practice challenges by topic</title>
+  <desc id="d">Bar chart and donut: Functions 5, Strings 5, Lists 4, Tuples 5, totalling 19 challenges.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0d12"/><stop offset="1" stop-color="#14161d"/></linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#fff" stroke-opacity=".04"/></pattern>
+    <linearGradient id="b1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#d97757"/><stop offset="1" stop-color="#ff8f6b"/></linearGradient>
+    <linearGradient id="b2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff4d8d"/><stop offset="1" stop-color="#ff86b1"/></linearGradient>
+    <linearGradient id="b3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3ddc97"/><stop offset="1" stop-color="#7af0bc"/></linearGradient>
+    <linearGradient id="b4" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6c5ce7"/><stop offset="1" stop-color="#9b8cff"/></linearGradient>
+  </defs>
+  <style>
+    .sans{font-family:'Inter','Segoe UI',Helvetica,Arial,sans-serif}
+    .mono{font-family:'JetBrains Mono','Fira Code',Consolas,Menlo,monospace}
+  </style>
+  <rect width="1600" height="560" rx="24" fill="url(#bg)"/>
+  <rect width="1600" height="560" rx="24" fill="url(#grid)"/>
+  <text x="40" y="52" class="mono" font-size="13" letter-spacing="2" fill="#6c7280">PRACTICE · CHALLENGES PER TOPIC</text>
+
+  <!-- axis guides: 100px per challenge, x0 = 250 -->
+  <g stroke="#ffffff" stroke-opacity=".08">
+    <line x1="250" y1="100" x2="250" y2="460"/><line x1="350" y1="100" x2="350" y2="460"/><line x1="450" y1="100" x2="450" y2="460"/>
+    <line x1="550" y1="100" x2="550" y2="460"/><line x1="650" y1="100" x2="650" y2="460"/><line x1="750" y1="100" x2="750" y2="460"/>
+  </g>
+  <g class="mono" font-size="14" fill="#6c7280" text-anchor="middle">
+    <text x="250" y="485">0</text><text x="350" y="485">1</text><text x="450" y="485">2</text><text x="550" y="485">3</text><text x="650" y="485">4</text><text x="750" y="485">5</text>
+  </g>
+
+  <!-- bars -->
+  <g class="sans" font-size="22" font-weight="600" fill="#fff">
+    <text x="60" y="152">Functions</text>
+    <rect x="250" y="116" width="500" height="48" rx="10" fill="url(#b1)"><animate attributeName="width" values="0;0;500" keyTimes="0;0.05;1" dur="2s" fill="freeze" calcMode="spline" keySplines="0 0 1 1;.2 .8 .2 1"/></rect>
+    <text x="770" y="150" class="mono" font-size="22" fill="#d97757">5</text>
+
+    <text x="60" y="232">Strings</text>
+    <rect x="250" y="196" width="500" height="48" rx="10" fill="url(#b2)"><animate attributeName="width" values="0;0;500" keyTimes="0;0.15;1" dur="2s" fill="freeze" calcMode="spline" keySplines="0 0 1 1;.2 .8 .2 1"/></rect>
+    <text x="770" y="230" class="mono" font-size="22" fill="#ff4d8d">5</text>
+
+    <text x="60" y="312">Lists</text>
+    <rect x="250" y="276" width="400" height="48" rx="10" fill="url(#b3)"><animate attributeName="width" values="0;0;400" keyTimes="0;0.25;1" dur="2s" fill="freeze" calcMode="spline" keySplines="0 0 1 1;.2 .8 .2 1"/></rect>
+    <text x="670" y="310" class="mono" font-size="22" fill="#3ddc97">4</text>
+
+    <text x="60" y="392">Tuples</text>
+    <rect x="250" y="356" width="500" height="48" rx="10" fill="url(#b4)"><animate attributeName="width" values="0;0;500" keyTimes="0;0.35;1" dur="2s" fill="freeze" calcMode="spline" keySplines="0 0 1 1;.2 .8 .2 1"/></rect>
+    <text x="770" y="390" class="mono" font-size="22" fill="#a89cf5">5</text>
+  </g>
+
+  <!-- donut: r=95, circumference 596.9; segments 5/19, 5/19, 4/19, 5/19 -->
+  <g transform="translate(1190 280) rotate(-90)" fill="none" stroke-width="42">
+    <circle r="95" stroke="#ffffff" stroke-opacity=".06"/>
+    <circle r="95" stroke="#d97757" stroke-dasharray="157.1 439.8" stroke-dashoffset="0"><animate attributeName="stroke-dasharray" values="0 596.9;0 596.9;157.1 439.8" keyTimes="0;0.05;1" dur="2s" fill="freeze"/></circle>
+    <circle r="95" stroke="#ff4d8d" stroke-dasharray="157.1 439.8" stroke-dashoffset="-157.1"><animate attributeName="stroke-dasharray" values="0 596.9;0 596.9;157.1 439.8" keyTimes="0;0.15;1" dur="2s" fill="freeze"/></circle>
+    <circle r="95" stroke="#3ddc97" stroke-dasharray="125.7 471.2" stroke-dashoffset="-314.2"><animate attributeName="stroke-dasharray" values="0 596.9;0 596.9;125.7 471.2" keyTimes="0;0.25;1" dur="2s" fill="freeze"/></circle>
+    <circle r="95" stroke="#6c5ce7" stroke-dasharray="157.1 439.8" stroke-dashoffset="-439.9"><animate attributeName="stroke-dasharray" values="0 596.9;0 596.9;157.1 439.8" keyTimes="0;0.35;1" dur="2s" fill="freeze"/></circle>
+  </g>
+  <text x="1190" y="282" class="mono" font-size="52" font-weight="800" fill="#fff" text-anchor="middle">19</text>
+  <text x="1190" y="312" class="sans" font-size="15" fill="#9a948f" text-anchor="middle">challenges</text>
+  <g class="sans" font-size="16" fill="#c9c2bd">
+    <circle cx="1020" cy="470" r="6" fill="#d97757"/><text x="1034" y="475">Functions</text>
+    <circle cx="1130" cy="470" r="6" fill="#ff4d8d"/><text x="1144" y="475">Strings</text>
+    <circle cx="1230" cy="470" r="6" fill="#3ddc97"/><text x="1244" y="475">Lists</text>
+    <circle cx="1310" cy="470" r="6" fill="#6c5ce7"/><text x="1324" y="475">Tuples</text>
+  </g>
+</svg>

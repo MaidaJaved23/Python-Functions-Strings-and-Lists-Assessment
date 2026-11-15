@@ -1,52 +1,206 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Python Functions &amp; Lists Assessment: Preview</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python Functions, Strings, Lists &amp; Tuples · Preview</title>
+<meta name="description" content="Visual preview of the PSEB DEPLOY Python bootcamp lecture: functions, strings, lists and tuples.">
 <style>
-:root{--bg:#06141f;--panel:#0b2433;--cy:#22d3ee;--gr:#34d399;--tx:#e6f6ff;--mu:#8fb3c7;color-scheme:dark}
-@media (prefers-color-scheme:light){:root{--bg:#eef7fb;--panel:#fff;--tx:#0a2433;--mu:#48667a;color-scheme:light}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:17px/1.6 "Segoe UI",Helvetica,Arial,sans-serif}
-img{max-width:100%;height:auto;display:block}
-nav{position:sticky;top:0;z-index:5;display:flex;gap:6px;flex-wrap:wrap;justify-content:center;padding:10px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid #22d3ee33}
-nav a{color:var(--cy);text-decoration:none;padding:6px 12px;border-radius:8px;font-weight:600}nav a:hover,nav a:focus-visible{background:#22d3ee22;outline:2px solid var(--cy)}
-main{max-width:1100px;margin:0 auto;padding:32px 20px 60px}
-section{margin:0 0 56px}h2{font-size:28px;margin:0 0 8px}p.lead{color:var(--mu);max-width:70ch;margin:0 0 20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.card{background:var(--panel);border:1px solid #22d3ee44;border-radius:14px;padding:20px}
-pre{margin:0;overflow-x:auto;background:#04101a;color:#bff6e0;padding:16px;border-radius:10px;font:14px/1.5 Consolas,Menlo,monospace}
-.card h3{margin:0 0 10px}
-footer img{margin-top:0}
-</style></head><body>
-<header><img src="assets/header.svg" alt="Python Functions and Lists Assessment"></header>
-<nav><a href="#flow">Program flow</a><a href="#er">ER diagram</a><a href="#task1">Task 1</a><a href="#task2">Task 2</a><a href="#run">Run it</a></nav>
+  :root{
+    --bg:#0b0d12; --panel:#12141a; --panel2:#171a22; --line:#242832; --text:#eae4df; --mute:#9a948f; --dim:#6c7280;
+    --coral:#d97757; --pink:#ff4d8d; --violet:#6c5ce7; --mint:#3ddc97; --sky:#4dabf7;
+    --mono:'JetBrains Mono','Fira Code',Consolas,Menlo,monospace;
+    --sans:'Inter','Segoe UI',Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;display:flex;min-height:100vh}
+  a{color:inherit;text-decoration:none}
+
+  /* sidebar */
+  aside{position:sticky;top:0;height:100vh;width:248px;flex:none;background:var(--panel);border-right:1px solid var(--line);padding:24px 16px;display:flex;flex-direction:column;gap:6px}
+  .brand{display:flex;align-items:center;gap:10px;padding:4px 10px 20px;font-weight:700;font-size:15px}
+  .logo{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--coral),var(--pink) 60%,var(--violet));display:grid;place-items:center;font-family:var(--mono);font-size:14px;color:#fff}
+  .nav-h{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--dim);padding:14px 10px 6px}
+  aside a.nav{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:10px;color:var(--mute);font-size:14px;transition:.2s}
+  aside a.nav i{width:8px;height:8px;border-radius:50%;background:var(--dim);transition:.2s}
+  aside a.nav:hover,aside a.nav.on{background:var(--panel2);color:#fff}
+  aside a.nav.on i{background:var(--coral);box-shadow:0 0 12px var(--coral)}
+  .side-foot{margin-top:auto;font-size:12px;color:var(--dim);padding:10px}
+
+  /* main */
+  main{flex:1;min-width:0}
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero img{display:block;width:100%;height:auto}
+  .wrap{max-width:1180px;margin:0 auto;padding:36px 32px 24px}
+  .top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+  h1{font-size:30px;letter-spacing:-.5px}
+  .pill{font-family:var(--mono);font-size:12px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--mute);background:var(--panel)}
+  .pill b{color:var(--mint)}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:36px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;position:relative;overflow:hidden;transition:.25s}
+  .stat:hover{transform:translateY(-4px);border-color:var(--coral)}
+  .stat::after{content:"";position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:var(--c);opacity:.14;filter:blur(8px)}
+  .stat small{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--dim)}
+  .stat .n{font-size:40px;font-weight:800;letter-spacing:-1px;margin-top:4px;color:var(--c)}
+  .stat p{font-size:13px;color:var(--mute)}
+
+  section{padding:12px 0 36px;scroll-margin-top:12px}
+  .sec-h{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+  .sec-h span{font-family:var(--mono);font-size:12px;color:var(--coral);letter-spacing:2px}
+  h2{font-size:24px;letter-spacing:-.3px}
+  .lead{color:var(--mute);max-width:760px;margin-bottom:18px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:12px;margin-bottom:18px;overflow:hidden}
+  .card img{display:block;width:100%;height:auto;border-radius:12px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  pre{background:#0d0f14;border:1px solid var(--line);border-radius:14px;padding:18px 20px;font-family:var(--mono);font-size:14px;overflow:auto;color:#e6dfda;line-height:1.7}
+  .k{color:var(--pink)}.s{color:var(--mint)}.c{color:var(--dim)}.f{color:var(--coral)}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}
+  .box h3{font-size:16px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .box h3 i{width:10px;height:10px;border-radius:3px;background:var(--c)}
+  .box ol{padding-left:20px;color:var(--mute);font-size:14px}
+  .box li{margin:4px 0}
+  code{font-family:var(--mono);background:var(--panel2);padding:1px 6px;border-radius:5px;font-size:.9em;color:var(--coral)}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;font-size:14px;color:var(--mute)}
+  .step b{display:block;font-family:var(--mono);color:var(--coral);font-size:12px;letter-spacing:2px;margin-bottom:4px}
+  footer{border-top:1px solid var(--line)}
+  footer img{display:block;width:100%;height:auto}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:1000px){
+    aside{display:none}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .grid2,.steps{grid-template-columns:1fr}
+    .wrap{padding:24px 16px}
+  }
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<aside>
+  <div class="brand"><div class="logo">py</div>Python Bootcamp</div>
+  <div class="nav-h">OVERVIEW</div>
+  <a class="nav on" href="#overview"><i></i>Overview</a>
+  <a class="nav" href="#path"><i></i>Learning path</a>
+  <div class="nav-h">LECTURE</div>
+  <a class="nav" href="#functions"><i></i>Functions</a>
+  <a class="nav" href="#strings"><i></i>Strings</a>
+  <a class="nav" href="#collections"><i></i>Lists &amp; tuples</a>
+  <a class="nav" href="#data-model"><i></i>ER diagram</a>
+  <div class="nav-h">STUDENT</div>
+  <a class="nav" href="#practice"><i></i>Challenges</a>
+  <a class="nav" href="#submit"><i></i>Submission</a>
+  <div class="side-foot">PSEB DEPLOY<br>Instructor: Waleed Shehbaz</div>
+</aside>
+
 <main>
-<section id="flow"><h2>Program flow</h2><p class="lead">Both programs are independent. Each one validates input first, then calculates, then prints a clear report.</p><img src="assets/program-flow.svg" alt="Program flow for both tasks"></section>
-<section id="er"><h2>ER diagram</h2><p class="lead">How the data in each task relates. This is a conceptual model; the programs use Python variables and lists.</p><img src="assets/er-diagram.svg" alt="ER diagram"></section>
-<section id="task1"><h2>Task 1: Student Result Card Generator</h2><p class="lead">Collects a name, roll number and five marks, then prints total, percentage, grade and Pass/Fail status.</p>
-<div class="grid"><img src="assets/grading-scale.svg" alt="Grading scale chart"><img src="assets/task1-marks-chart.svg" alt="Task 1 sample marks chart"></div>
-<div class="card" style="margin-top:20px"><h3>Sample output</h3><pre>========================================
-             STUDENT RESULT CARD
-========================================
-Student Name : Ali Khan
-Roll Number  : 1025
-----------------------------------------
-Total Marks  : 450 / 500
-Percentage   : 90.00%
-Letter Grade : A+
-Final Status : Pass
-========================================</pre></div></section>
-<section id="task2"><h2>Task 2: Class Marks Analyzer</h2><p class="lead">Collects names and marks into two lists, then reports average, extremes, pass/fail counts, above-average students and sorted marks.</p>
-<div class="grid"><img src="assets/task2-marks-chart.svg" alt="Task 2 sample marks chart"><div class="card"><h3>Sample output</h3><pre>Total Students : 4
-Class Average  : 72.50
-Highest Marks  : 95  (Sara)
-Lowest Marks   : 45  (Ahmed)
-Passing Students : 3
-Failing Students : 1
-Above average:
-Sara: 95
-Sorted: 95, 80, 70, 45</pre></div></div></section>
-<section id="run"><h2>Run it</h2><div class="card"><pre>python result_card_generator.py
-python class_marks_analyzer.py</pre></div></section>
+  <div class="hero"><img src="assets/header.svg" alt="Python Functions, Strings, Lists and Tuples animated banner"></div>
+
+  <div class="wrap">
+    <div class="top" id="overview">
+      <h1>Lecture preview</h1>
+      <div class="pill">Python <b>3.10+</b> · no third-party packages</div>
+    </div>
+
+    <div class="stats">
+      <div class="stat reveal" style="--c:var(--coral)"><small>LECTURE FILES</small><div class="n" data-to="2">0</div><p>Runnable .py examples</p></div>
+      <div class="stat reveal" style="--c:var(--pink)"><small>CORE TOPICS</small><div class="n" data-to="4">0</div><p>Functions, strings, lists, tuples</p></div>
+      <div class="stat reveal" style="--c:var(--mint)"><small>PRACTICE CHALLENGES</small><div class="n" data-to="19">0</div><p>Across all four topics</p></div>
+      <div class="stat reveal" style="--c:var(--violet)"><small>NEXT STOPS</small><div class="n" data-to="4">0</div><p>OOP, Django, REST, AI</p></div>
+    </div>
+
+    <section id="path">
+      <div class="sec-h"><span>01</span><h2>Learning path</h2></div>
+      <p class="lead">Start with any of the four topics. Each one feeds into design decisions, then practice, then GitHub submission.</p>
+      <div class="card reveal"><img src="assets/learning-path.svg" alt="Learning path diagram"></div>
+    </section>
+
+    <section id="functions">
+      <div class="sec-h"><span>02</span><h2>Functions</h2></div>
+      <p class="lead">Parameters bring information in. <code>return</code> sends a result back to the caller.</p>
+      <div class="card reveal"><img src="assets/function-flow.svg" alt="How a function call works"></div>
+      <div class="card reveal"><img src="assets/print-vs-return.svg" alt="print versus return"></div>
+      <pre class="reveal"><span class="k">def</span> <span class="f">calculate_total</span>(price: float, quantity: int) -&gt; float:
+    <span class="k">return</span> price * quantity
+
+bill = calculate_total(<span class="s">250</span>, <span class="s">3</span>)
+<span class="f">print</span>(bill)   <span class="c"># 750</span></pre>
+    </section>
+
+    <section id="strings">
+      <div class="sec-h"><span>03</span><h2>Strings</h2></div>
+      <p class="lead">Strings support indexing and slicing but are immutable, so modifying text means creating a new string.</p>
+      <div class="card reveal"><img src="assets/string-slicing.svg" alt="String indexing and slicing"></div>
+    </section>
+
+    <section id="collections">
+      <div class="sec-h"><span>04</span><h2>Lists &amp; tuples</h2></div>
+      <p class="lead">Lists change. Tuples stay fixed. Both are ordered and indexable.</p>
+      <div class="card reveal"><img src="assets/collections-matrix.svg" alt="Strings, lists and tuples compared"></div>
+    </section>
+
+    <section id="data-model">
+      <div class="sec-h"><span>05</span><h2>ER diagram</h2></div>
+      <p class="lead">The student, marks, expenses and shopping-bill challenges all describe the same small data model. In Python, a tuple inside a list is one row of a table.</p>
+      <div class="card reveal"><img src="assets/er-diagram.svg" alt="Entity relationship diagram"></div>
+    </section>
+
+    <section id="practice">
+      <div class="sec-h"><span>06</span><h2>Practice challenges</h2></div>
+      <div class="card reveal"><img src="assets/challenges-chart.svg" alt="Challenges per topic chart"></div>
+      <div class="grid2">
+        <div class="box reveal" style="--c:var(--coral)"><h3><i></i>Functions · 5</h3><ol>
+          <li>Rectangle area</li><li>Percentage out of 1100 marks</li><li>Shopping bill with 10% discount</li><li>Expenses with <code>*args</code></li><li>Student profile with <code>**kwargs</code></li></ol></div>
+        <div class="box reveal" style="--c:var(--pink)"><h3><i></i>Strings · 5</h3><ol>
+          <li>Clean a full name</li><li>Lowercase an email</li><li>First four characters</li><li>Reverse a name by slicing</li><li>Format <code>+92 300 1234567</code></li></ol></div>
+        <div class="box reveal" style="--c:var(--mint)"><h3><i></i>Lists · 4</h3><ol>
+          <li>Five student names</li><li>Add, update, remove</li><li>Average of five marks</li><li>Marks of 80 or more</li></ol></div>
+        <div class="box reveal" style="--c:var(--violet)"><h3><i></i>Tuples · 5</h3><ol>
+          <li>Student information tuple</li><li>Access by index</li><li>Unpack into variables</li><li>Why tuples can't change</li><li>Tuples inside a list</li></ol></div>
+      </div>
+    </section>
+
+    <section id="submit">
+      <div class="sec-h"><span>07</span><h2>GitHub submission</h2></div>
+      <div class="steps">
+        <div class="step reveal"><b>STEP 1</b>Clone this repository.</div>
+        <div class="step reveal"><b>STEP 2</b>Run both Python files.</div>
+        <div class="step reveal"><b>STEP 3</b>Review and understand the examples.</div>
+        <div class="step reveal"><b>STEP 4</b>Complete the challenges in your own Python file(s).</div>
+        <div class="step reveal"><b>STEP 5</b>Push your work to your own GitHub repository.</div>
+        <div class="step reveal"><b>STEP 6</b>Submit your repository URL for assessment.</div>
+      </div>
+    </section>
+  </div>
+
+  <footer><img src="assets/footer.svg" alt="PSEB DEPLOY footer"><p style="text-align:center;color:var(--mu)">Author: Maida Javed</p></footer>
 </main>
-<footer><img src="assets/footer.svg" alt="Footer"></footer>
-<p style="text-align:center;color:var(--mu)">Author: Maida Javed</p>
-</body></html>
+
+<script>
+  // reveal on scroll
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // counters
+  const co = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target, to = +el.dataset.to; let n = 0;
+    const t = setInterval(() => { n++; el.textContent = n; if (n >= to) clearInterval(t); }, 900 / to);
+    co.unobserve(el);
+  }), {threshold:.6});
+  document.querySelectorAll('.n').forEach(el => co.observe(el));
+
+  // active nav
+  const links = [...document.querySelectorAll('a.nav')];
+  const secs = links.map(a => document.querySelector(a.getAttribute('href')));
+  const so = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id));
+  }), {rootMargin:'-30% 0px -60% 0px'});
+  secs.forEach(s => s && so.observe(s));
+</script>
+</body>
+</html>

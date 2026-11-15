@@ -1,368 +1,221 @@
 <div align="center">
 
-<img src="assets/header.svg" alt="Python Functions and Lists Assessment" width="100%"/>
+<img src="assets/header.svg" alt="Python Functions, Strings, Lists and Tuples: animated banner" width="100%">
 
-![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Assessment](https://img.shields.io/badge/Assessment-Functions%20%26%20Lists-2563eb?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Completed-16803c?style=for-the-badge)
+<br>
 
-**Two beginner-friendly Python programs for student results and class performance analysis.**
+![Python](https://img.shields.io/badge/Python-3.10%2B-d97757?style=for-the-badge&logo=python&logoColor=white&labelColor=14161d)
+![Topics](https://img.shields.io/badge/Topics-4-ff4d8d?style=for-the-badge&labelColor=14161d)
+![Challenges](https://img.shields.io/badge/Challenges-19-3ddc97?style=for-the-badge&labelColor=14161d)
+![Dependencies](https://img.shields.io/badge/Dependencies-none-6c5ce7?style=for-the-badge&labelColor=14161d)
 
-### <p align="center">
-  <a href="https://maidajaved23.github.io/python-functions-lists-assessment/preview.html"><b>▶ Open the live preview</b></a>
-</p>
+### 🔗 [Open the visual preview &rarr;](./preview.html)
+
+<sub>GitHub shows `preview.html` as source code. To see it rendered, enable **GitHub Pages** (Settings &rarr; Pages &rarr; deploy from branch) and open<br>`https://<your-username>.github.io/<repo-name>/preview.html`, or just open the file in your browser after cloning.</sub>
 
 </div>
 
 ---
 
-## 1. Project Overview
+# Python Functions, Strings, Lists & Tuples
 
-This repository contains two separate Python programs created for the **Functions, Strings and Lists Assessment**.
+## Learning Path
 
-The programs use simple Python logic to collect student information, validate input, perform calculations, and display clear results.
+<img src="assets/learning-path.svg" alt="Learning path from functions, strings, lists and tuples to OOP, Django, REST APIs and AI apps" width="100%">
 
-### Repository files
-
-| File | Purpose |
-|---|---|
-| `result_card_generator.py` | Creates a result card for one student. |
-| `class_marks_analyzer.py` | Analyzes marks for all students in a class. |
-| `README.md` | Explains the project, concepts, instructions, and sample results. |
-| `assets/` | Animated SVG graphics used by this README and the preview page. |
-| `preview.html` | Standalone visual preview of this project (see [live preview](https://htmlpreview.github.io/?https://github.com/YOUR-USERNAME/python-functions-lists-assessment/blob/main/preview.html)). |
-
-### Program flow
-
-<div align="center">
-<img src="assets/program-flow.svg" alt="Program flow for both tasks" width="100%"/>
-</div>
-
-### ER diagram
-
-The diagram shows how the data in each task relates. It is a conceptual model: the programs use Python variables and lists, not a database.
-
-<div align="center">
-<img src="assets/er-diagram.svg" alt="ER diagram for both tasks" width="100%"/>
-</div>
-
-## 2. Task 1: Student Result Card Generator
-
-### Description
-
-The first program asks for one student's name, roll number, and marks in five subjects. It calculates the total marks, percentage, and letter grade, then displays a formatted result card.
-
-### Requirements covered
-
-- Collects the student's name and roll number.
-- Collects marks in five subjects: English, Mathematics, Computer Science, Physics, and Chemistry.
-- Uses `get_valid_marks(subject)` to accept marks only from 0 to 100.
-- Uses `calculate_percentage(total, max_total)` to calculate the percentage.
-- Uses `get_grade(percentage)` to assign the letter grade.
-- Uses `format_name(name)` with `.strip()` and `.title()` to clean the student's name.
-- Checks the roll number with `.isdigit()` so it contains digits only.
-- Uses the required grading scale:
-
-| Percentage | Grade |
-|---|---|
-| 90 and above | A+ |
-| 80 to below 90 | A |
-| 70 to below 80 | B |
-| 60 to below 70 | C |
-| 50 to below 60 | D |
-| Below 50 | Fail |
-
-**Special passing rule:** If even one subject has marks below 40, the final status is `Fail`, even if the overall percentage is high. The letter grade is calculated from the overall percentage, while the final Pass/Fail status also checks this special rule.
-
-<div align="center">
-<img src="assets/grading-scale.svg" alt="Grading scale chart" width="80%"/>
-</div>
-
-### Python concepts used
-
-- Functions: `def`, parameters, and `return`
-- Conditional statements: `if`, `elif`, and `else`
-- String methods: `.strip()`, `.title()`, and `.isdigit()`
-- Lists and loops
-- `sum()` and `any()`
-- Exception handling with `try` and `except`
-- Formatted output using f-strings
-
-### Sample input
-
+## Repository Structure
 ```text
-Enter student name:  ali khan
-Enter roll number:  1025
-Enter marks in English (0-100): 95
-Enter marks in Mathematics (0-100): 88
-Enter marks in Computer Science (0-100): 91
-Enter marks in Physics (0-100): 84
-Enter marks in Chemistry (0-100): 92
-```
-
-### Sample output
-
-<div align="center">
-<img src="assets/task1-marks-chart.svg" alt="Task 1 sample marks chart" width="80%"/>
-</div>
-
-```text
-========================================
-             STUDENT RESULT CARD
-========================================
-Student Name : Ali Khan
-Roll Number  : 1025
-----------------------------------------
-English             : 95
-Mathematics         : 88
-Computer Science    : 91
-Physics             : 84
-Chemistry           : 92
-----------------------------------------
-Total Marks  : 450 / 500
-Percentage   : 90.00%
-Letter Grade : A+
-Final Status : Pass
-========================================
-```
-
-## 3. Task 2: Class Marks Analyzer
-
-### Description
-
-The second program collects the names and marks of all students in a class. It analyzes their performance and displays the class average, highest and lowest marks, passing and failing counts, students above average, and marks in descending order.
-
-### Requirements covered
-
-- Asks how many students are in the class.
-- Creates two separate lists:
-  - `student_names = []`
-  - `student_marks = []`
-- Uses `.append()` to store each student's name and marks.
-- Validates every mark and accepts only values from 0 to 100.
-- Asks again when a mark or other numeric input is invalid.
-- Calculates the class average.
-- Finds the highest and lowest marks.
-- Displays all students tied for the highest or lowest marks.
-- Counts passing students (50 or above) and failing students (below 50).
-- Displays all students whose marks are above the class average.
-- Displays marks sorted from highest to lowest.
-- Uses custom functions for input validation, average calculation, and above-average student display.
-
-### Python concepts and functions used
-
-| Concept / Function | Purpose |
-|---|---|
-| Lists `[]` | Store student names and marks separately. |
-| `.append()` | Add each student's information to a list. |
-| `len()` | Count the students in the class. |
-| `sum()` | Add all marks to calculate the average. |
-| `max()` | Find the highest marks. |
-| `min()` | Find the lowest marks. |
-| `sorted()` | Arrange marks from highest to lowest. |
-| `for` loop | Collect and analyze student information. |
-| `if` and `else` | Count passing and failing students. |
-| Custom functions | Keep repeated tasks simple and organized. |
-| `try` and `except` | Handle invalid numeric input. |
-
-### Sample input
-
-```text
-How many students are in the class? 4
-
-Student 1
-Enter student name: Ali
-Enter marks for Ali (0-100): 80
-
-Student 2
-Enter student name: Sara
-Enter marks for Sara (0-100): 95
-
-Student 3
-Enter student name: Ahmed
-Enter marks for Ahmed (0-100): 45
-
-Student 4
-Enter student name: Ayesha
-Enter marks for Ayesha (0-100): 70
-```
-
-### Sample output
-
-<div align="center">
-<img src="assets/task2-marks-chart.svg" alt="Task 2 sample marks chart" width="80%"/>
-</div>
-
-```text
-========================================
-             CLASS ANALYSIS
-========================================
-Total Students : 4
-Class Average  : 72.50
-
-Highest Marks  : 95
-Student(s) with highest marks:
-- Sara
-
-Lowest Marks   : 45
-Student(s) with lowest marks:
-- Ahmed
-
-Passing Students : 3
-Failing Students : 1
-
-Students scoring above the class average:
-Sara: 95
-
-Marks from highest to lowest:
-95, 80, 70, 45
-========================================
-```
-
-## 4. How to Run the Programs
-
-### Requirements
-
-- Python 3 installed on your computer.
-- Any Python editor, such as VS Code, PyCharm, or IDLE.
-- No external Python libraries are required.
-
-### Step 1: Download or clone the repository
-
-```bash
-git clone https://github.com/YOUR-USERNAME/python-functions-lists-assessment.git
-```
-
-Replace `YOUR-USERNAME` with your GitHub username.
-
-### Step 2: Open the project folder
-
-```bash
-cd python-functions-lists-assessment
-```
-
-### Step 3: Run Task 1
-
-```bash
-python result_card_generator.py
-```
-
-### Step 4: Run Task 2
-
-```bash
-python class_marks_analyzer.py
-```
-
-Run each file separately because both programs are independent.
-
-## 5. Input Validation and Testing
-
-Both programs were designed to handle invalid input instead of stopping unexpectedly.
-
-### Task 1 test scenarios
-
-| Test | Expected behavior |
-|---|---|
-| Marks are between 0 and 100 | Accept the marks. |
-| Marks are below 0 or above 100 | Show an error and ask again. |
-| Letters are entered instead of marks | Show an error and ask again. |
-| Roll number contains letters or symbols | Reject it and ask again. |
-| Name has extra spaces | Clean it using `.strip()` and `.title()`. |
-| All marks are 40 or above and percentage is at least 50 | Final status is Pass. |
-| Any one subject has marks below 40 | Final status is Fail. |
-| Overall percentage is below 50 | Letter grade is Fail. |
-
-### Task 2 test scenarios
-
-| Test | Expected behavior |
-|---|---|
-| Student count is zero or negative | Ask for a positive number again. |
-| Student count is not a whole number | Show an error and ask again. |
-| Marks are between 0 and 100 | Accept the marks. |
-| Marks are below 0 or above 100 | Show an error and ask again. |
-| Letters are entered instead of marks | Show an error and ask again. |
-| A student scores exactly 50 | Count the student as passing. |
-| Two or more students have the same highest or lowest marks | Display all students with those marks. |
-| A student scores above the class average | Include that student in the above-average list. |
-
-## 6. General Programming Practices
-
-- Both tasks are saved in separate Python files.
-- Every function has a clear name and a one-line comment describing its purpose.
-- Meaningful variable and function names are used.
-- Input validation is included.
-- Important programming steps have comments.
-- Proper indentation and readable formatting are maintained.
-- The programs use basic Python concepts and straightforward logic.
-
-## 7. GitHub Repository Structure
-
-The repository should be named:
-
-`python-functions-lists-assessment`
-
-It must contain the three required project files. The `assets/` folder and `preview.html` are optional extras that power the README visuals and preview:
-
-```text
-python-functions-lists-assessment/
-│
-├── result_card_generator.py
-├── class_marks_analyzer.py
+python-functions-and-strings/
 ├── README.md
 ├── preview.html
+├── 01_functions_fundamentals.py
+├── 02_strings_lists_tuples.py
 └── assets/
     ├── header.svg
     ├── footer.svg
-    ├── er-diagram.svg
-    ├── program-flow.svg
-    ├── grading-scale.svg
-    ├── task1-marks-chart.svg
-    └── task2-marks-chart.svg
+    ├── learning-path.svg
+    ├── function-flow.svg
+    ├── print-vs-return.svg
+    ├── string-slicing.svg
+    ├── collections-matrix.svg
+    ├── challenges-chart.svg
+    └── er-diagram.svg
 ```
 
-## 8. LMS Submission Checklist
+All graphics are animated vector SVGs, so they stay sharp at any resolution, including HD and retina displays.
 
-Before submitting the assignment, make sure you have:
+## Lecture Files
 
-- [ ] Created the GitHub repository with the required name.
-- [ ] Uploaded `result_card_generator.py`.
-- [ ] Uploaded `class_marks_analyzer.py`.
-- [ ] Uploaded `README.md`.
-- [ ] Uploaded the `assets/` folder and `preview.html` so the README graphics and preview link work.
-- [ ] Tested both programs with different input scenarios.
-- [ ] Pushed the latest code to GitHub.
-- [ ] Checked that the repository is accessible.
-- [ ] Copied the GitHub repository URL for LMS submission.
+| File | Concepts |
+|---|---|
+| `01_functions_fundamentals.py` | Function definition and calls, parameters, arguments, defaults, `print()` vs `return`, scope, `*args`, `**kwargs`, validation, reusable function design |
+| `02_strings_lists_tuples.py` | Quotes, indexing, slicing, immutability, f-string formatting, string cleaning, `split()` and `join()`, lists, list methods, list comprehension, tuples, unpacking |
+| `preview.html` | Visual, animated overview of this lecture. Open it in any browser |
 
-### Git commands
+## Requirements
+- Python 3.10 or later
+- VS Code or another Python editor
+- Terminal / Command Prompt
+- No third-party packages required
 
-Use these commands from inside the project folder:
+## Key Concepts
 
-```bash
-git init
-git add .
-git commit -m "Complete Functions and Lists Assessment"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/python-functions-lists-assessment.git
-git push -u origin main
+### Functions
+Functions organize code into reusable blocks. Parameters receive information; `return` sends a result back to the caller.
+
+```python
+def calculate_total(price: float, quantity: int) -> float:
+    return price * quantity
+
+bill = calculate_total(250, 3)
+print(bill)
 ```
 
-If the remote repository is already connected, do not add it again. For later updates, use:
+<img src="assets/function-flow.svg" alt="How a function call works: arguments in, return value out" width="100%">
 
-```bash
-git add .
-git commit -m "Update assessment files"
-git push
+### `print()` vs `return`
+
+| `print()` | `return` |
+|---|---|
+| Displays information on the screen | Sends a value back to the caller |
+| Useful for messages and output | Useful when a result must be stored, reused, or tested |
+
+<img src="assets/print-vs-return.svg" alt="print shows a value and loses it; return hands it back" width="100%">
+
+### Strings
+
+Strings store text. They support indexing and slicing, but are immutable: individual characters cannot be changed in place. Create a new string when modifying text.
+
+<img src="assets/string-slicing.svg" alt="Indexing and slicing of the string PYTHON" width="100%">
+
+### Lists
+
+Lists are ordered, mutable collections. Use methods such as `append()`, `insert()`, `remove()`, and `pop()` to manage items.
+
+### Tuples
+
+Tuples are ordered, immutable collections. They are useful for fixed records and support unpacking into variables.
+
+### Choosing a Data Structure
+
+<img src="assets/collections-matrix.svg" alt="Capability matrix comparing str, list and tuple" width="100%">
+
+## Data Model Behind the Challenges
+
+The student, marks, expense and shopping-bill challenges all describe the same small data model. In Python, one tuple inside a list is one row of a table.
+
+<img src="assets/er-diagram.svg" alt="ER diagram with STUDENT, SUBJECT, MARK, EXPENSE, BILL and BILL_ITEM" width="100%">
+
+<details>
+<summary>Same diagram as Mermaid (renders natively on GitHub)</summary>
+
+```mermaid
+erDiagram
+    STUDENT ||--o{ MARK : earns
+    SUBJECT ||--o{ MARK : has
+    STUDENT ||--o{ EXPENSE : records
+    STUDENT ||--o{ BILL : receives
+    BILL ||--o{ BILL_ITEM : lists
+
+    STUDENT {
+        int student_id PK
+        str full_name
+        str email
+        str phone
+    }
+    SUBJECT {
+        int subject_id PK
+        str name
+        int total_marks
+    }
+    MARK {
+        int mark_id PK
+        int student_id FK
+        int subject_id FK
+        int score
+    }
+    EXPENSE {
+        int expense_id PK
+        int student_id FK
+        str label
+        float amount
+    }
+    BILL {
+        int bill_id PK
+        int student_id FK
+        int discount_pct
+    }
+    BILL_ITEM {
+        int item_id PK
+        int bill_id FK
+        str name
+        float price
+        int qty
+    }
 ```
 
-## 9. Final Note
+</details>
 
-Both programs are independent and use beginner-friendly Python logic. Review the functions, conditions, loops, and calculations before your evaluation so you can explain how each program works and demonstrate it confidently.
+## Student Practice Challenges
+
+<img src="assets/challenges-chart.svg" alt="Bar chart and donut showing 19 challenges: Functions 5, Strings 5, Lists 4, Tuples 5" width="100%">
+
+### Functions
+
+1. Write a function to calculate the area of a rectangle.
+2. Calculate a student's percentage out of 1100 marks.
+3. Create a shopping-bill function that applies a 10% discount.
+4. Accept multiple expense values using `*args`.
+5. Create a student profile function using `**kwargs`.
+
+### Strings
+
+1. Ask for a full name and remove unnecessary spaces.
+2. Convert an email address to lowercase.
+3. Extract the first four characters of a string.
+4. Reverse a student's name using slicing.
+5. Format a Pakistani phone number as `+92 300 1234567`.
+
+### Lists
+
+1. Create a list of five student names.
+2. Add, update, and remove names.
+3. Store five examination marks and calculate their average.
+4. Display marks greater than or equal to 80.
+
+### Tuples
+
+1. Create a tuple containing student information.
+2. Access tuple values using indexing.
+3. Unpack a tuple into separate variables.
+4. Explain why a tuple cannot be modified.
+5. Store multiple student records using tuples inside a list.
+
+## GitHub Submission Instructions
+
+1. Clone this repository.
+2. Run both Python files.
+3. Review and understand the examples.
+4. Complete the practice challenges in your own Python file(s).
+5. Push your work to your own GitHub repository.
+6. Submit your repository URL for assessment.
+
+## Key Takeaways
+
+- **Functions** make code reusable and organized.
+- **Strings** represent and transform textual information.
+- **Lists** manage collections that can change.
+- **Tuples** store ordered data that should remain fixed.
+
+These fundamentals prepare students for Python OOP, Django, REST APIs, and AI-powered applications.
 
 ---
 
+<img src="assets/footer.svg" alt="PSEB DEPLOY: Python, Django and AI Bootcamp. Instructor Waleed Shehbaz" width="100%">
+
 <div align="center">
 
-<img src="assets/footer.svg" alt="Python Functions and Lists Assessment footer" width="100%"/>
-<p><b>Author:</b> Maida Javed</p>
+**PSEB DEPLOY: Python, Django & AI Bootcamp**  
+Author: [Maida Javed]
+
 </div>
